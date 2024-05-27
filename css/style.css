@@ -123,7 +123,7 @@ img{
 /* Home */
 .home{
   background-color: var(--container-color);
-  padding-block: 5rem 3rem;
+  padding-block: 9rem 3rem;
 }
 .home__container{
   grid-template-columns: repeat(2, 1fr);
@@ -158,6 +158,29 @@ img{
 .home__img-wrapper::before,
 .home__img-wrapper::after{
   content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.home__img-wrapper::before{
+  background-color: var(--first-color-light);
+  animation: animate__before 8s ease-in-out infinite;
+}
+
+.home__img-wrapper::after{
+  background-color: var(--first-color);
+}
+
+.home__img-wrapper::after,
+.home_img {
+  animation: animate__after 8s ease-in-out infinite;
+}
+
+.home_img {
+  z-index: 10;
+  position: relative;
+  height: 500px;
+  vertical-align: middle;
 }
 
 /* Button */
@@ -166,7 +189,7 @@ img{
   display: inline-block;
   background-color: var(--first-color);
   border: 1px solid var(--first-color);
-  color: white;
+  color: var(--white);
   padding: 0.9rem 2.5rem;
   font-size: var(--large-font-size);
   border-radius: 0.5rem;
@@ -182,10 +205,39 @@ img{
 
 .btn:hover{
   background-color: var(--first-color-dark);
-  color: var(--white);
 }
 
 .btn--transparent:hover{
   background-color: var(--first-color);
   color: var(--white);
+}
+
+/* home animation */
+
+@keyframes animate__before {
+  0%{
+    border-radius: 65% 35% 29% 71% / 55% 30% 70% 45% ;
+  }
+
+  50%{
+    border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%  ;
+  }
+
+  100%{
+    border-radius: 65% 35% 29% 71% / 55% 30% 70% 45% ;
+  }
+}
+
+@keyframes animate__after {
+  0%{
+    border-radius: 21% 79% 50% 50% / 21% 50% 50% 79% ;
+  }
+
+  50%{
+    border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%   ;
+  }
+
+  100%{
+    border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%  ;
+  }
 }
