@@ -157,7 +157,7 @@ img{
 
 .home__img-wrapper::before,
 .home__img-wrapper::after{
-  
+  content: '';
 }
 
 /* Button */
