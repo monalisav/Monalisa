@@ -26,6 +26,7 @@
   --weight-600: 600;
 
   /* darktheme */
+ 
   #day-night:checked ~ *{
     --title-color: hsl(247, 27%, 31%);
     --text-color: hsl(0, 0%, 41%);
@@ -47,7 +48,7 @@ input, textarea,button,body{
   font-size: var(--larger-font-size);
 }
 
-main {
+main{
   background-color: var(--body-color);
   color: var(--text-color);
 }
@@ -117,6 +118,7 @@ img{
   color: var(--title-color);
   background-color: var(--body-color);
   border: 1px solid var(--border-color);
+  border-radius: 50%;
   height: 48px;
   width: 48px;
   cursor: pointer;
@@ -642,4 +644,58 @@ color: var(--first-color);
 .footer__social-link{
   color: var(--text-color);
   font-size: var(--large-font-size);
+}
+
+/* Breakpoints */
+/* large devices */
+@media screen and (max-width: 1200px) {
+  .container{
+    max-width: 960px;
+  }
+
+  :root{
+    --big-font-size: 2.5rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --larger-font-size: 1.rem;
+    --large-font-size: .938rem;
+  }
+
+  .home_img{
+    height: 340px;
+  }
+
+  .about_img{
+    height: 320px;
+  }
+
+  .services__icon{
+    font-size: 1.5rem;
+  }
+
+  .services__no{
+    font-size: 2.5rem;
+  }
+
+  .services__title{
+    margin-block: 1.25rem .75rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  
+}
+ /* medium devices */
+@media screen and (max-width: 768px) {
+  
+}
+
+/* small devices */
+@media screen and (max-width: 576px) {
+  
+}
+
+@media screen and (max-width: 450px) {
+  
 }
