@@ -48,7 +48,7 @@ input, textarea,button,body{
   font-size: var(--larger-font-size);
 }
 
-main{
+body{
   background-color: var(--body-color);
   color: var(--text-color);
 }
@@ -112,7 +112,7 @@ img{
 
 /* dark-mode */
 
-.style__switcher-theme{
+/* .style__switcher-theme{
   position: absolute;
   bottom: 7%;
   color: var(--title-color);
@@ -137,7 +137,7 @@ display: none;
 
 #day-night:checked ~ * .fa-moon{
   display: block;
-}
+} */
 
 /* header and nav */
 .header{
@@ -178,6 +178,10 @@ display: none;
   transition: all .3s ease;
 }
 
+.nav__toggle{
+  display: none;
+}
+
 /* active link */
 
 .active-link, .nav__link:hover{
@@ -187,10 +191,10 @@ display: none;
 /* Home */
 .home{
   background-color: var(--container-color);
-  padding-block: 9rem 3rem;
+  padding-block: 4rem 3rem;
 }
 .home__container{
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
   align-items: center;
 }
 
@@ -681,15 +685,81 @@ color: var(--first-color);
   .services__title{
     margin-block: 1.25rem .75rem;
   }
+
 }
 
 @media screen and (max-width: 992px) {
-  
+  .container{
+    max-width: 720px;
+  }
+
+  .home__container,
+  .about__container,
+  .contact__container{
+    grid-template-columns: 1fr;
+  }
+
+  .home__content{
+    order: 1;
+  }
+
+  .home__img-wrapper{
+    margin-inline: auto;
+  }
+  .about_img:not(:first-child){
+    display: none;
+  }
+
+  .about_img:first-child{
+    clip-path: initial;
+    transform: initial;
+    left: 50%;
+    translate: -50%;
+  }
+
+  .contact__container{
+    row-gap: 2rem;
+  }
+
+  .services__container,
+  .skills__container,
+  .work__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
  /* medium devices */
 @media screen and (max-width: 768px) {
+  .container{
+    max-width: 560px;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1rem);
+  }
   
+  .nav__list{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    flex-direction: column;
+    align-items: center;
+    row-gap: .75rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+  }
+
+  .nav__toggle{
+    display: block  ;
+    color: var(--text-color);
+    font-size: 1.3rem;
+  }
 }
+
+
 
 /* small devices */
 @media screen and (max-width: 576px) {
